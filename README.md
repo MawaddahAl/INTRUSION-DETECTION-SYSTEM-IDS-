@@ -1,141 +1,112 @@
+
+
+This project is for academic and demonstration purposesز
+
 ---
+
+# 🚀 LSTM-Based Network Intrusion Detection System (NIDS)
+
+This project implements a Network Intrusion Detection System (NIDS) using a Long Short-Term Memory (LSTM) deep learning model to detect Denial of Service (DoS) attacks. The model is trained and evaluated using the NSL-KDD dataset and achieves high accuracy in identifying various types of network attacks.
+
+## 📌 Abstract
+
+The existence of vulnerabilities in programs and systems allows attackers to exploit and launch DoS attacks. This research designs an LSTM model that analyzes network traffic to detect potential DoS attacks by leveraging temporal patterns using recurrent neural networks. The LSTM model was trained on the NSL-KDD dataset, containing multiple types of attacks including DoS, U2R, R2L, and Probe. With its ability to capture long-range dependencies, the model achieved **99.9% accuracy in detecting DoS attacks** and **98.4% for other attacks**.
+
+---
+
+## 📖 Table of Contents
+
+- [Background](#background)
+- [Problem Overview](#problem-overview)
+- [Aims and Objectives](#aims-and-objectives)
+- [Existing Methods](#existing-methods)
+- [Methodology Overview](#methodology-overview)
+- [Dataset](#dataset)
+- [Model Architecture](#model-architecture)
+- [Results](#results)
+- [Conclusion](#conclusion)
+- [License](#-license)
+
+---
+
+## 🔍 Background
+
+Network Intrusion Detection Systems (NIDS) are crucial for monitoring traffic and identifying malicious activities. LSTM models are particularly well-suited for recognizing patterns in sequential data like network traffic, making them effective for DoS detection.
+
+---
+
+## ❗ Problem Overview
+
+The presence of vulnerabilities allows attackers to launch DoS attacks that disrupt services. These attacks can have various motives, and with the growth of internet-connected systems, their frequency is expected to increase.
+
+---
+
+## 🎯 Aims and Objectives
+
+- Understand key NIDS concepts.
+- Design a system to detect DoS attacks.
+- Analyze DoS attack patterns.
+- Build and train an accurate LSTM model.
+- Enable real-time alerting for detected threats.
+
+---
+
+## 📚 Existing Methods
+
+| Study | Model | Accuracy | Drawback |
+|------|-------|----------|----------|
+| LSTM for NIDS | LSTM | 99.93% | Long training time |
+| Sampling-based NIDS | LSTM + CNN | 99.20% | Requires large labeled data |
+| Autoencoder-based | Autoencoder | 98.73% | Complex for large data |
+| Deep Learning NIDS | DDN | 99.40% | Poor generalization |
+| GMM-based Detection | GMM | 94% | Resource intensive |
+
+---
+
+## 🛠️ Methodology Overview
+
+1. **Data Preparation:** Clean and filter the NSL-KDD dataset.
+2. **Model Construction:** Create the LSTM model for sequence learning.
+3. **Training:** Train on labeled traffic data.
+4. **Detection:** Predict incoming traffic as normal or attack.
+5. **Evaluation:** Use metrics like accuracy, precision, and recall.
+
+---
+
+## 🗂️ Dataset
+
+- **Name:** NSL-KDD
+- **Attack Types:** DoS, U2R, R2L, Probe
+- **Source:** [NSL-KDD Dataset](https://www.unb.ca/cic/datasets/nsl.html)
+
+---
+
+## 🧠 Model Architecture
+
+- **Layers:** LSTM, Dense, Dropout
+- **Loss Function:** Categorical Crossentropy
+- **Optimizer:** Adam
+- **Evaluation Metrics:** Accuracy, Confusion Matrix
+
+---
+
+## 📊 Results
+
+| Attack Type | Accuracy |
+|-------------|----------|
+| DoS         | 99.9%    |
+| Others      | 98.4%    |
+
+---
+
+## 🧾 Conclusion
+
+This LSTM-based NIDS effectively detects DoS attacks with high accuracy. It provides a strong foundation for future enhancements, such as deploying the model in real-time network monitoring environments or integrating with other security tools.
+
+---
+
+> Built with ❤️ by Mawdah
 
 ## 📃 License
 
-This project is for academic and demonstration purposes.
-
----
-
-# Concerts and Conferences Management System (CCMS)
-
-## 📌 Introduction
-
-The Concerts and Conferences Management System (CCMS) is a comprehensive solution for organizing and coordinating events such as concerts, conferences, and parties. It provides a centralized platform to manage coordinators, clients, institutions, parties, and contracts. The goal is to enhance event planning efficiency, improve coordination, and ensure seamless execution.
-
-## 🎯 Motivation
-
-In today's fast-paced world, events are crucial for communication, networking, and creating memorable experiences. However, managing them is complex. CCMS was built to simplify these processes by:
-- Centralizing event information
-- Managing multi-role relationships
-- Reducing manual efforts
-- Offering a user-friendly interface
-
----
-
-## 🧭 Mission
-
-To provide a robust and secure database system that centralizes all key event management operations while maintaining accuracy, efficiency, and scalability.
-
-### ✅ Objectives:
-- Centralized Data Management
-- User-friendly Interface
-- Strong Relationship Management
-- Automation and Efficiency
-- Scalable Architecture
-- Data Security & Authorization
-- Real-time Reporting
-- Easy Integration with external tools
-
----
-
-## 📦 System Scope & Features
-
-### 🔹 Modules Included:
-- **Coordinator Management**
-- **Party Management**
-- **Contract Management**
-- **Institution Management**
-- **Client Management**
-- **Relational Mapping Between Entities**
-
-### 🔹 User Views:
-- **Coordinator View**
-- **Client View**
-- **Institution View**
-- **Admin View**
-
-Cross-referencing allows smooth collaboration across all views.
-
----
-
-## 🔍 Requirements
-
-### 👥 Stakeholders:
-- Coordinators
-- Clients
-- Institutions
-- System Administrators
-
-### 🧩 Functional Requirements:
-- Coordinators can manage profiles, parties, and contracts.
-- Clients can track events and view contract details.
-- Institutions can manage contracts and information.
-- Admins can configure system settings and user access.
-
-### ⚙️ Non-Functional Requirements:
-- Usability across roles
-- Fast performance
-- Scalable architecture
-- Secure access and authorization
-- Reliable system availability
-
----
-
-## 📐 System Design
-
-### 🔸 Conceptual Design:
-- ER Diagram connecting Coordinators, Parties, Contracts, Institutions, and Customers with clear cardinalities.
-
-### 🔸 Logical Design:
-Schema includes:
-- `Coordinator`
-- `Party`
-- `Contract`
-- `Institution`
-- `Customer`
-- `PartyCustomer` (relationship table)
-
-### 🔸 Physical Design:
-- Implemented using SQL statements (see `/sql` folder or documentation for full script)
-- Includes table creation and insertion of sample data
-
----
-
-## 🗃️ DBMS Selection
-
-A relational database management system (RDBMS) was chosen due to the structured nature of the data. Recommended DBMS options:
-- PostgreSQL
-- MySQL
-- SQL Server
-- Cloud: Google Cloud SQL / Amazon RDS
-
-Factors:
-- Scalability
-- Performance
-- Security
-- Support for relational integrity
-
----
-
-## 📊 Sample Queries
-
-- View all parties and their coordinators
-- Retrieve all contracts with linked institutions
-- Access customer-parties associations
-
----
-
-## 🧪 Prototyping & Testing
-
-Interactive prototypes were developed and improved with stakeholder feedback. The final system was designed with a focus on usability, clarity, and robustness.
-
----
-
-## 👤 Developed by
-
-**Mawdah Fahad M. Albalawi**  
-Graduate of Information Technology, University of Tabuk  
-
----
-
-
+This project is for academic and demonstration purposes. For commercial use, please contact the developer.
